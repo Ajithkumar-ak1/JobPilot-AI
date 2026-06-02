@@ -2,3 +2,5 @@ langgraph
 langchain
 python-dotenv
 requests 
+pymupdf
+sentence-transformers

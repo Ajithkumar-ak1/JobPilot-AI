@@ -18,6 +18,7 @@ def search_agent(state: JobSearchState):
                 "company": job.get("employer_name"),
                 "location": job.get("job_city"),
                 "apply_link": job.get("job_apply_link"),
+                "description": job.get("job_description")
             }
         )
 

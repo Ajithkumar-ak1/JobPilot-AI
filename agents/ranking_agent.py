@@ -1,8 +1,13 @@
-from state import JobSearchState
+def ranking_agent(state):
 
+    jobs = state["matched_jobs"]
 
-def ranking_agent(state: JobSearchState):
+    ranked_jobs = sorted(
+        jobs,
+        key=lambda x: x["match_score"],
+        reverse=True
+    )
 
-    jobs = state["jobs"]
-
-    return {"ranked_jobs": jobs}
+    return {
+        "ranked_jobs": ranked_jobs
+    }
