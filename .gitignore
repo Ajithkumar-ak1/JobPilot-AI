@@ -137,3 +137,4 @@ Thumbs.db
 .env.local
 *.pem
 *.key
+*.pdf

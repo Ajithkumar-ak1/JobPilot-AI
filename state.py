@@ -1,12 +1,14 @@
 from typing import TypedDict, List, Dict, Optional
 
 
-class JobSearchState(TypedDict, total=False):
+class JobSearchState(TypedDict):
     query: str
-    resume_text: Optional[str]
+    resume_text: str
 
-    jobs: List[Dict]
-    matched_jobs: List[Dict]
-    ranked_jobs: List[Dict]
+    jobs: list
+    matched_jobs: list
+    ranked_jobs: list
+
+    skill_gaps: dict
 
     response: str
