@@ -2,14 +2,20 @@ from state import JobSearchState
 
 
 def response_agent(state: JobSearchState):
-    jobs = state["ranked_jobs"]
 
-    output = []
+    jobs = state["ranked_jobs"][:10]
 
-    for idx, job in enumerate(jobs, start=1):
-        output.append(
-            f"{idx}. {job['title']} at {job['company']} "
-            f"({job['location']}) - Score {job['score']}"
+    lines = []
+
+    for i, job in enumerate(jobs, start=1):
+
+        lines.append(
+            f"""
+            {i}. {job['title']}
+            Company: {job['company']}
+            Location: {job['location']}
+            Apply: {job['apply_link']}
+            """
         )
 
-    return {"response": "\n".join(output)}
+    return {"response": "\n".join(lines)}

@@ -1,28 +1,24 @@
 from state import JobSearchState
+from tools.job_api import search_jobs
 
 
 def search_agent(state: JobSearchState):
+
     query = state["query"]
 
-    jobs = [
-        {
-            "title": "AI Intern",
-            "company": "Company A",
-            "location": "Bangalore",
-            "score": 85
-        },
-        {
-            "title": "ML Intern",
-            "company": "Company B",
-            "location": "Chennai",
-            "score": 75
-        },
-        {
-            "title": "Data Science Intern",
-            "company": "Company C",
-            "location": "Remote",
-            "score": 90
-        }
-    ]
+    jobs = search_jobs(query)
 
-    return {"jobs": jobs}
+    cleaned_jobs = []
+
+    for job in jobs:
+
+        cleaned_jobs.append(
+            {
+                "title": job.get("job_title"),
+                "company": job.get("employer_name"),
+                "location": job.get("job_city"),
+                "apply_link": job.get("job_apply_link"),
+            }
+        )
+
+    return {"jobs": cleaned_jobs}

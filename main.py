@@ -2,7 +2,7 @@ from graph.workflow import graph
 
 result = graph.invoke(
     {
-        "query": "AI Intern Bangalore"
+        "query": "Machine Learning Intern India"
     }
 )
 
