@@ -1,4 +1,5 @@
 from typing import TypedDict, List, Dict, Optional
+from datetime import datetime
 
 
 class JobSearchState(TypedDict):
@@ -12,3 +13,4 @@ class JobSearchState(TypedDict):
     skill_gaps: dict
 
     response: str
+    timestamp: str

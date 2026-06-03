@@ -5,3 +5,7 @@ python-dotenv
 requests 
 pymupdf
 sentence-transformers
+flask
+flask-cors
+gunicorn
+python-dotenv
